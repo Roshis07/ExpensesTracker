@@ -17,9 +17,17 @@ const [enteredPrice,setEnteredPrice]= useState('');
   const priceChangeHandler = (event) => {
    setEnteredPrice (event.target.value);
   }
-  const submitHandler = () => {
-    
-    
+  const submitHandler = (event) => {
+    event.preventDefault();
+    const expenseData = {
+      title: enteredTitle, 
+      price: enteredPrice,
+      date: new Date(enteredDate)
+    }
+    console.log(expenseData);
+    setEnteredTitle('');
+    setEnteredPrice('');
+    setEnteredDate('');
   }
 
 
@@ -34,14 +42,14 @@ const [enteredPrice,setEnteredPrice]= useState('');
         <form onSubmit={submitHandler}>
         <div className="container">
                  <div className="item">  <label for="expenseName">Expenses name:</label>
-                 <input type="text" id="expenseName" name="expenseName" onChange={titleChangeHandler}/>
+                 <input type="text" id="expenseName" name="expenseName" value={enteredTitle} onChange={titleChangeHandler}/>
         </div>
           <div className="item">
                  <label for="expenseDate">Date:</label>
-                 <input type="date" id="expenseDate" name="expenseDate" onChange={dateChangeHandler}/>
+                 <input type="date" id="expenseDate" name="expenseDate" value={enteredDate} onChange={dateChangeHandler}/>
         </div>
                    <div className="item"><label for="expensePrice">Price:</label>
-                 <input type="number" step="0.01" id="expensePrice" name="expensePrice"onChange={priceChangeHandler}/></div>
+                 <input type="number" step="0.01" id="expensePrice" name="expensePrice" value={enteredPrice} onChange={priceChangeHandler}/></div>
             </div>
                
                 <br/>

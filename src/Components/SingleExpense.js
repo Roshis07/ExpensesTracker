@@ -1,14 +1,14 @@
 import React, {useState} from 'react'
 
-export const SingleExpense = ({expense}) => {
+export const SingleExpense = ({expense} ) => {
     const [title, setTitle] = useState(expense.title);
   
     const clickHandler = () => {
       setTitle("New Title");
     };
   
-      return (
-        
+  return (
+ 
      <ul>
       <div className='container'>
         <div className='title'>{title}</div>
@@ -18,4 +18,4 @@ export const SingleExpense = ({expense}) => {
               </div> 
               </ul>
     )
-  }
+}
