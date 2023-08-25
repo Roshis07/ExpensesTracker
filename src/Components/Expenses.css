@@ -1,0 +1,23 @@
+.expenses{
+    font-size: 3em;
+    color: #823c41;
+}
+
+  .container:hover {
+    border-color: #007bff; /* Border color on hover */
+  }
+  .title{
+    color: rgb(163, 61, 156);
+    font-size: 24px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  .price{
+    font-size: 24px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+  }
+  .date{
+    font-size: 24px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+    color: rgb(43, 17, 192);
+
+  }

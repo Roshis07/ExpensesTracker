@@ -1,0 +1,44 @@
+.heading{
+
+    font-size: 3em;
+
+  background: linear-gradient(45deg, #ff0000, #f200ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    font-size: 2em;
+    align-items: flex-end; /* Corrected value for vertical alignment */
+    margin-left: 200px; /* Adjust this value as needed */
+  }
+  .item input {
+    font-size: 0.5em;
+    padding: 5px;
+  }
+  .submit {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .submit input[type="submit"] {
+    background-color: #00c8ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 5px;
+  }
+  
+  .submit input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
