@@ -1,7 +1,7 @@
 import React ,{ useState} from 'react';
 import './NewExpenses.css';
 
-export const NewExpenses = () => {
+export const NewExpenses = (props) => {
   const [enteredTitle,setEnteredTitle]= useState('');
 
   const titleChangeHandler = (event) => {
@@ -20,11 +20,12 @@ const [enteredPrice,setEnteredPrice]= useState('');
   const submitHandler = (event) => {
     event.preventDefault();
     const expenseData = {
+      id: Math.random().toString(),
       title: enteredTitle, 
       price: enteredPrice,
       date: new Date(enteredDate)
     }
-    console.log(expenseData);
+    props.onSaveExpenseData(expenseData);
     setEnteredTitle('');
     setEnteredPrice('');
     setEnteredDate('');
