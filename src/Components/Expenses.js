@@ -1,23 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { SingleExpense } from "./SingleExpense";
+import ExpensesFilter from "./ExpensesFilter";
+import "./Expenses.css";
 
-import { NewExpenses } from './NewExpenses'
-import './Expenses.css';
-import { SingleExpense } from './SingleExpense';
+export const Expenses = ({ expenses }) => {
+  const [filteredYear, setFilteredYear] = useState("2023");
 
+  const filterChangeHandler = (selectedYear) => {
+    setFilteredYear(selectedYear);
+  };
 
-export const Expenses = ( {expenses} ) => {
-
+  const filteredExpenses = expenses.filter((expense) => {
+    return expense.date.getFullYear().toString() === filteredYear;
+  });
+  console.log(expenses);
   return (
+    <div>
+      <div className="expenses">Expenses</div>
+      <ExpensesFilter
+        selected={filteredYear}
+        onChangeFilter={filterChangeHandler}
+      />
       <div>
-      <div className='expenses'>Expenses</div>
-          <div>
- 
-
-        {expenses.map(expense =>
-          (
-            <SingleExpense key={expense.id} expense={expense} />      ))};
-              </div>
+        {filteredExpenses.map((expense) => (
+          <SingleExpense key={expense.id} expense={expense} />
+        ))}
       </div>
-
-  )
-}
+    </div>
+  );
+};
